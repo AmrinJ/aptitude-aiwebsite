@@ -29,7 +29,7 @@ export default function MathMotionVisualizer({ params, answerValue }: { params: 
 
   // Parallax background variants
   const bgVariants = {
-    animate: { backgroundPosition: ['0px 0px', '-2000px 0px'], transition: { repeat: Infinity, duration: 15, ease: "linear" } }
+    animate: { backgroundPosition: ['0px 0px', '-2000px 0px'], transition: { repeat: Infinity, duration: 15, ease: "linear" as const } }
   };
 
   // ---------------------------------------------------------
