@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff; /* Pure White background */
+  --foreground: #0f172a; /* Deep charcoal text for high contrast */
+  --accent: #2563eb; /* Solid Royal Blue */
+  --border: #e2e8f0; /* Soft slate border */
+}
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+}
+
+/* Accessibility Modes */
+.cb-protanopia {
+  filter: hue-rotate(-15deg) saturate(85%) contrast(110%);
+}
+.cb-deuteranopia {
+  filter: hue-rotate(15deg) saturate(80%) contrast(110%);
+}
+.cb-tritanopia {
+  filter: hue-rotate(180deg) saturate(90%);
+}
+
+/* Minimalist Card Style */
+.glass-panel {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.dark .glass-panel {
+  background: #161b22; /* GitHub Dark Card Background */
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+/* Hover effects */
+.glow-hover {
+  transition: all 0.1s ease;
+}
+.glow-hover:hover {
+  border-color: var(--accent);
+}
+
+/* Infinite Marquee Animation for Recruiters */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s infinite linear;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #30363d;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #58a6ff;
+}
